@@ -1,0 +1,28 @@
+digraph Tree {
+node [shape=box, style="filled", color="black"] ;
+0 [label="worst concave points <= 0.146\ngini = 0.467\nsamples = 398\nvalue = [148, 250]\nclass = 양성", fillcolor="#399de568"] ;
+1 [label="worst area <= 929.8\ngini = 0.169\nsamples = 269\nvalue = [25, 244]\nclass = 양성", fillcolor="#399de5e5"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label="worst perimeter <= 102.05\ngini = 0.076\nsamples = 252\nvalue = [10, 242]\nclass = 양성", fillcolor="#399de5f4"] ;
+1 -> 2 ;
+3 [label="gini = 0.018\nsamples = 215\nvalue = [2, 213]\nclass = 양성", fillcolor="#399de5fd"] ;
+2 -> 3 ;
+4 [label="gini = 0.339\nsamples = 37\nvalue = [8, 29]\nclass = 양성", fillcolor="#399de5b9"] ;
+2 -> 4 ;
+5 [label="mean texture <= 15.77\ngini = 0.208\nsamples = 17\nvalue = [15, 2]\nclass = 악성", fillcolor="#e58139dd"] ;
+1 -> 5 ;
+6 [label="gini = 0.0\nsamples = 2\nvalue = [0, 2]\nclass = 양성", fillcolor="#399de5ff"] ;
+5 -> 6 ;
+7 [label="gini = 0.0\nsamples = 15\nvalue = [15, 0]\nclass = 악성", fillcolor="#e58139ff"] ;
+5 -> 7 ;
+8 [label="worst radius <= 12.8\ngini = 0.089\nsamples = 129\nvalue = [123, 6]\nclass = 악성", fillcolor="#e58139f3"] ;
+0 -> 8 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+9 [label="gini = 0.0\nsamples = 3\nvalue = [0, 3]\nclass = 양성", fillcolor="#399de5ff"] ;
+8 -> 9 ;
+10 [label="area error <= 13.475\ngini = 0.046\nsamples = 126\nvalue = [123, 3]\nclass = 악성", fillcolor="#e58139f9"] ;
+8 -> 10 ;
+11 [label="gini = 0.0\nsamples = 1\nvalue = [0, 1]\nclass = 양성", fillcolor="#399de5ff"] ;
+10 -> 11 ;
+12 [label="gini = 0.031\nsamples = 125\nvalue = [123, 2]\nclass = 악성", fillcolor="#e58139fb"] ;
+10 -> 12 ;
+}
