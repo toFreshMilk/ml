@@ -26,7 +26,7 @@ from sklearn.tree import DecisionTreeClassifier
 #   병합하는 방법
 
 # 사이킷 런에서는 1번의 방법만을 지원(사전 차단 방법을 지원)
-model = DecisionTreeClassifier(random_state=1).fit(X_train, y_train)
+model = DecisionTreeClassifier(max_depth=3, random_state=1).fit(X_train, y_train)
 
 print("훈련 데이터 정확도 : ", model.score(X_train, y_train))
 print("테스트 데이터 정확도 : ", model.score(X_test, y_test))
@@ -53,6 +53,10 @@ with open('cancer_tree.dot', encoding='utf-8') as f:
     dot_graph = f.read()
     
 display(graphviz.Source(dot_graph))
+
+print(len(cancer.data))
+print(len(X_train))
+
 
 
 

@@ -26,8 +26,8 @@ def plot_feature_importances_cancer(model):
     n_features = cancer.data.shape[1]
     plt.barh(range(n_features), model.feature_importances_, align='center')
     plt.yticks(np.arange(n_features), cancer.feature_names)
-    plt.xlabel("feature_importances_")
-    plt.ylabel("feature_")
+    plt.xlabel("feature_importances")
+    plt.ylabel("feature")
     plt.ylim(-1, n_features)
 
 plot_feature_importances_cancer(model)
