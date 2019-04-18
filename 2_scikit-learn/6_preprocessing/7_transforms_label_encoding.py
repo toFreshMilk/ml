@@ -18,9 +18,13 @@ print(iris.info())
 print(iris.head())
 
 # pandas 모듈을 사용하여 범주형 데이터를 수치 데이터로 변환 방법
-#encoded, categories = iris.Species.factorize()
-#print(encoded)
-#print(categories)
+# factorize 메소드
+# 특정 열에 존재하는 모든 데이터의 중복을 제거한 후,
+# 각 값에 대해서 정수값을 매핑하여 반환하는 메소드
+# 반환값 -> 정수배열, 각 정수에 해당되는 실제 데이터
+encoded, categories = iris.Species.factorize()
+print(encoded)
+print(categories)
 
 # 범주데이터를 수치데이터로 변형하는 방법
 # - LabelEncoder 클래스
@@ -49,11 +53,16 @@ encoder = OneHotEncoder()
 # iris 품종에 대한 일차원 배열을 2차원 배열로 변환하여
 # 처리합니다.
 iris_one_hot = encoder.fit_transform(iris.Species.values.reshape(-1,1))
-#print(type(iris_one_hot))
-#print(iris_one_hot)
+print(type(iris_one_hot))
+print(iris_one_hot)
 print(iris_one_hot.toarray())
 # 원핫인코딩으로 추출된 품종 정보를 추출
 print(encoder.categories_)
+# inverse_transform 메서드를 사용하여
+# 원핫인코딩의 값을 실제 값으로 반환
+# 주의사항 - 2차원 배열로 전달해야함
+print(encoder.inverse_transform([[0,0,1]]))
+
 
 
 

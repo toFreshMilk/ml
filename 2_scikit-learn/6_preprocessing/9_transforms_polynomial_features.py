@@ -25,6 +25,24 @@ from sklearn.preprocessing import PolynomialFeatures
 X = np.arange(6).reshape(-1, 1)
 print(X)
 
-pf = PolynomialFeatures(degree=2)
-#pf = PolynomialFeatures(degree=2, include_bias=False)
+#pf = PolynomialFeatures(degree=2)
+pf = PolynomialFeatures(degree=2, include_bias=False)
 print(pf.fit_transform(X))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

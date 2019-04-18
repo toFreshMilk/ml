@@ -29,7 +29,7 @@ diabetes.iloc[[0, 1], 0] = None
 # 수와 다름을 확인할 수 있음
 print(diabetes.info())
 # 결측데이터는 NaN 값으로 확인됨
-print(diabetes.head())
+print(diabetes.head(3))
 
 # 결측데이터를 삭제하는 방법은 많은 모듈에서 제공하고 있음
 # - pandas 를 사용하여 결측데이터가 포함된 샘플을 삭제하는 방법
@@ -46,7 +46,7 @@ diabetes.dropna(axis=0, inplace=True)
 
 # 결측데이터가 삭제된 것을 확인할 수 있음
 print(diabetes.info())
-print(diabetes.head())
+print(diabetes.head(3))
 
 
 

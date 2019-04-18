@@ -56,7 +56,7 @@ imputer = SimpleImputer(strategy="median")
 #imputer = SimpleImputer(strategy="most_frequent")
 # 결측 데이터를 fill_value 매개변수에 지정한 값으로
 # 대체할 수 있는 사이킷런 변환 클래스의 객체 생성
-#imputer = SimpleImputer(strategy="constant", fill_value=0.25)
+imputer = SimpleImputer(strategy="constant", fill_value=0.25)
 
 print(imputer.fit_transform(diabetes)[:5])
 

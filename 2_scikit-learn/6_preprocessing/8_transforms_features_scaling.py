@@ -23,20 +23,20 @@
 #data = [[-1,2], 
 #        [-0.5,6], 
 #        [0,10], 
-#        [1,18]]#
+#        [1,18]]
 #scaler = MinMaxScaler()
 #print(scaler.fit_transform(data))
 
 import pandas as pd
+
+data = pd.read_csv("../../data/score.csv")
+data.drop("name", axis=1, inplace=True)
 
 # 각 수치데이터의 최소 최대값을 기준으로 정규화를
 # 처리할 수 있는 MinMaxScaler 클래스
 # - 각 열의 데이터를 0 ~ 1 사이로 압축하는 역할
 # - 반드시 수치 데이터만을 전달해야 함
 from sklearn.preprocessing import MinMaxScaler
-data = pd.read_csv("../../data/score.csv")
-data.drop("name", axis=1, inplace=True)
-
 scaler = MinMaxScaler()
 print(scaler.fit_transform(data))
 
@@ -51,6 +51,8 @@ print("=" * 20)
 from sklearn.preprocessing import StandardScaler
 scaler = StandardScaler()
 print(scaler.fit_transform(data))
+
+print("=" * 20)
 
 # 중앙값(median)과 IQR(interquartile range)를 사용하여 
 # 아웃라이어의 영향을 최소화하며 변환할 수 있는 
